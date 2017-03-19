@@ -7,4 +7,11 @@
     <string name="demo_suggested_member">199990 members</string>
     <string name="demo_suggested_subtitle">Brought to you by Android Central......</string>
     <string name="demo_suggested_community">View community</string>
+
+    <!-- You may know card -->
+    <string name="may_know_card_title">You may know</string>
+    <string name="may_know_card_subtitle">To see posts from friends and family, add them.</string>
+    <string name="may_know_card_add">Add</string>
+    <string name="may_know_card_inner_title">Gabriele Mariotti</string>
+    <string name="may_know_card_inner_subtitle">178 in common</string>
 </resources>
