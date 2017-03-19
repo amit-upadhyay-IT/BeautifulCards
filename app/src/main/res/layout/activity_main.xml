@@ -15,6 +15,8 @@
         android:id="@+id/carddemo_suggested"
         style="@style/card_external"
         android:layout_width="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:stateListAnimator="@animator/lift_on_touch"
         android:layout_height="wrap_content"
         card:card_layout_resourceID="@layout/carddemo_native_suggested_layout"/>
 
