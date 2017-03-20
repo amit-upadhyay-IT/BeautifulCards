@@ -25,7 +25,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initCardSuggested() {
 
-        SuggestedCard card = new SuggestedCard(this);
+        String titleMessage = "Amit Upadhyay";
+        String subtitleMessageOne = "--CEO";
+        String subtitleMessageTwo = "2000 members";
+        String communityMessage = "View Community";
+        String thumbnailUrl = "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg";
+
+        SuggestedCard card = new SuggestedCard(this, titleMessage, subtitleMessageOne, subtitleMessageTwo, communityMessage, thumbnailUrl);
         CardViewNative cardView = (CardViewNative) this.findViewById(R.id.carddemo_suggested);
         cardView.setCard(card);
     }
@@ -36,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
     private void initCardMayKnow() {
 
         //Create a Card
-        MayKnowCard card= new MayKnowCard(this, "Amit Upadhyay", "App developer");
+        MayKnowCard card= new MayKnowCard(this, "Amit Upadhyay", "App developer", "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg");
         card.setShadow(false);
 
         //Set card in the cardView
         CardView cardView = (CardView) this.findViewById(R.id.carddemo_MayKnow);
         cardView.setCard(card);
 
-        MayKnowCard card2 = new MayKnowCard(this, "Amit", "CEO");
+        MayKnowCard card2 = new MayKnowCard(this, "Amit", "CEO", "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg");
         card2.addCardHeader(null);
         card2.setShadow(true);
         CardView mayView2 = (CardView) this.findViewById(R.id.carddemo_MayKnow2);

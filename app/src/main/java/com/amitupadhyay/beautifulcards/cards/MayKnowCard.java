@@ -21,11 +21,13 @@ public class MayKnowCard extends Card {
 
     private String titleMessage;
     private String subtitleMessage;
+    private String thumbnailUrl;
 
-    public MayKnowCard(Context context, String titleMessage, String subtitleMessage) {
+    public MayKnowCard(Context context, String titleMessage, String subtitleMessage, String thumbnailUrl) {
         this(context, R.layout.carddemo_mayknow_inner_content);
         this.titleMessage = titleMessage;
         this.subtitleMessage = subtitleMessage;
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     public MayKnowCard(Context context, int innerLayout) {
@@ -34,6 +36,9 @@ public class MayKnowCard extends Card {
     }
 
     private void init() {
+
+        setSwipeable(true);
+
         //Add Header
         CardHeader header = new MayKnowCardHeader(getContext(), R.layout.carddemo_mayknow_inner_header);
         header.setTitle(getContext().getString(R.string.may_know_card_title));
@@ -42,7 +47,7 @@ public class MayKnowCard extends Card {
 
         //Add Thumbnail
         CardThumbnail thumbnail = new CardThumbnail(getContext());
-        thumbnail.setUrlResource("https://lh5.googleusercontent.com/-squZd7FxR8Q/UyN5UrsfkqI/AAAAAAAAbAo/VoDHSYAhC_E/s72/new%2520profile%2520%25282%2529.jpg");
+        thumbnail.setUrlResource(thumbnailUrl);
         thumbnail.setErrorResource(R.drawable.ic_error_loadingsmall);
         addCardThumbnail(thumbnail);
 

@@ -19,8 +19,17 @@ import it.gmariotti.cardslib.library.internal.CardThumbnail;
 
 public class SuggestedCard extends Card {
 
-    public SuggestedCard(Context context) {
+    private String titleMessage, subtitleMessageOne, subTitleMessageTwo, communityMessage;
+    private String thumbnailUrl;
+
+    public SuggestedCard(Context context, String titleMessage, String subtitleMessageOne, String subTitleMessageTwo, String communityMessage, String thumbnailUrl) {
         this(context, R.layout.carddemo_suggested_inner_content);
+
+        this.titleMessage = titleMessage;
+        this.subtitleMessageOne = subtitleMessageOne;
+        this.subTitleMessageTwo = subTitleMessageTwo;
+        this.communityMessage = communityMessage;
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     public SuggestedCard(Context context, int innerLayout) {
@@ -47,7 +56,7 @@ public class SuggestedCard extends Card {
 
         //Add thumbnail
         CardThumbnail thumb = new SuggestedCardThumb(getContext());
-        thumb.setUrlResource("https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg");
+        thumb.setUrlResource(thumbnailUrl);
         thumb.setErrorResource(R.drawable.ic_error_loadingorangesmall);
         addCardThumbnail(thumb);
     }
@@ -61,17 +70,25 @@ public class SuggestedCard extends Card {
             TextView subtitle = (TextView) view.findViewById(R.id.carddemo_suggested_subtitle);
             TextView community = (TextView) view.findViewById(R.id.carddemo_suggested_community);
 
-            if (title != null)
-                title.setText(R.string.demo_suggested_title);
+            if (title != null) {
+                //title.setText(R.string.demo_suggested_title);
+                title.setText(titleMessage);
+            }
 
-            if (member != null)
-                member.setText(R.string.demo_suggested_member);
+            if (member != null) {
+                //member.setText(R.string.demo_suggested_member);
+                member.setText(subtitleMessageOne);
+            }
 
-            if (subtitle != null)
-                subtitle.setText(R.string.demo_suggested_subtitle);
+            if (subtitle != null) {
+                //subtitle.setText(R.string.demo_suggested_subtitle);
+                subtitle.setText(subTitleMessageTwo);
+            }
 
-            if (community != null)
-                community.setText(R.string.demo_suggested_community);
+            if (community != null) {
+                //community.setText(R.string.demo_suggested_community);
+                community.setText(communityMessage);
+            }
         }
     }
 
