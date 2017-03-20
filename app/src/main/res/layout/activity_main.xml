@@ -1,45 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    xmlns:card="http://schemas.android.com/apk/res-auto"
-    tools:context="com.amitupadhyay.beautifulcards.MainActivity">
+    android:background="#eee"
+    android:clipToPadding="false"
+    android:paddingTop="0dp">
 
-    <it.gmariotti.cardslib.library.view.CardViewNative
-        android:id="@+id/carddemo_suggested"
-        style="@style/card_external"
-        android:layout_width="wrap_content"
-        android:foreground="?attr/selectableItemBackground"
-        android:stateListAnimator="@animator/lift_on_touch"
-        android:layout_height="wrap_content"
-        card:card_layout_resourceID="@layout/carddemo_native_suggested_layout"/>
-
-    <!--May Know Card -->
-    <it.gmariotti.cardslib.library.view.CardView
-        android:id="@+id/carddemo_MayKnow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        card:card_layout_resourceID="@layout/card_thumbnail_layout"
-        android:layout_marginTop="12dp"/>
-
-    <it.gmariotti.cardslib.library.view.CardView
-        android:id="@+id/carddemo_MayKnow2"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        card:card_layout_resourceID="@layout/card_thumbnail_layout"
-        android:layout_marginTop="2dp"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:card="http://schemas.android.com/apk/res-auto"
+        tools:context="com.amitupadhyay.beautifulcards.MainActivity">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:stateListAnimator="@animator/lift_on_touch"
+            card:card_layout_resourceID="@layout/carddemo_native_suggested_layout"
+            card_view:cardBackgroundColor="#2d566b"
+            card_view:cardCornerRadius="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fruit"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="Amit Kumar Upadhyay"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"/>
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fruit"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/peaches"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/save"
+                    android:background="#50000000"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp"
+                    android:text="MinimumStack"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"/>
+
+                <ImageButton
+                    android:id="@+id/save"
+                    style="?android:buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_below="@+id/image"
+                    android:layout_toLeftOf="@+id/mail"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_add"
+                    android:tint="@color/white"/>
+
+                <ImageButton
+                    android:id="@+id/mail"
+                    style="?android:buttonBarButtonStyle"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/image"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_search"
+                    android:tint="@color/white"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <it.gmariotti.cardslib.library.view.CardViewNative
+            android:id="@+id/carddemo_suggested"
+            style="@style/card_external"
+            android:layout_width="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:stateListAnimator="@animator/lift_on_touch"
+            android:layout_height="wrap_content"
+            card:card_layout_resourceID="@layout/carddemo_native_suggested_layout"/>
+
+        <!--May Know Card -->
+        <it.gmariotti.cardslib.library.view.CardView
+            android:id="@+id/carddemo_MayKnow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            card:card_layout_resourceID="@layout/card_thumbnail_layout"
+            android:layout_marginTop="12dp"/>
+
+        <it.gmariotti.cardslib.library.view.CardView
+            android:id="@+id/carddemo_MayKnow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            card:card_layout_resourceID="@layout/card_thumbnail_layout"
+            android:layout_marginTop="2dp"/>
 
 
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
