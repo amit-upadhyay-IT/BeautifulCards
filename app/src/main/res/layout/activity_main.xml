@@ -40,4 +40,6 @@
         card:card_layout_resourceID="@layout/card_thumbnail_layout"
         android:layout_marginTop="2dp"/>
 
+
+
 </LinearLayout>
