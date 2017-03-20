@@ -19,8 +19,13 @@ import it.gmariotti.cardslib.library.view.component.CardThumbnailView;
 
 public class MayKnowCard extends Card {
 
-    public MayKnowCard(Context context) {
+    private String titleMessage;
+    private String subtitleMessage;
+
+    public MayKnowCard(Context context, String titleMessage, String subtitleMessage) {
         this(context, R.layout.carddemo_mayknow_inner_content);
+        this.titleMessage = titleMessage;
+        this.subtitleMessage = subtitleMessage;
     }
 
     public MayKnowCard(Context context, int innerLayout) {
@@ -58,8 +63,11 @@ public class MayKnowCard extends Card {
         TextView subtitle = (TextView) view.findViewById(R.id.carddemo_mayknow_main_inner_subtitle);
         TextView add = (TextView) view.findViewById(R.id.carddemo_mayknow_main_inner_button);
 
-        title.setText(getContext().getString(R.string.may_know_card_inner_title));
-        subtitle.setText(getContext().getString(R.string.may_know_card_inner_subtitle));
+        //title.setText(getContext().getString(R.string.may_know_card_inner_title));
+        //subtitle.setText(getContext().getString(R.string.may_know_card_inner_subtitle));
+
+        title.setText(titleMessage);
+        subtitle.setText(subtitleMessage);
         add.setClickable(true);
 
         CardViewWrapper cardView = getCardView();

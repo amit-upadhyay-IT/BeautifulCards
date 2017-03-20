@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
     private void initCardMayKnow() {
 
         //Create a Card
-        MayKnowCard card= new MayKnowCard(this);
+        MayKnowCard card= new MayKnowCard(this, "Amit Upadhyay", "App developer");
         card.setShadow(false);
 
         //Set card in the cardView
         CardView cardView = (CardView) this.findViewById(R.id.carddemo_MayKnow);
         cardView.setCard(card);
 
-        MayKnowCard card2 = new MayKnowCard(this);
+        MayKnowCard card2 = new MayKnowCard(this, "Amit", "CEO");
         card2.addCardHeader(null);
         card2.setShadow(true);
         CardView mayView2 = (CardView) this.findViewById(R.id.carddemo_MayKnow2);
