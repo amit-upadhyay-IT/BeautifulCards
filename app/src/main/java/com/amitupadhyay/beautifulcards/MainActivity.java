@@ -3,6 +3,9 @@ package com.amitupadhyay.beautifulcards;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.amitupadhyay.beautifulcards.cards.MayKnowCard;
+import com.amitupadhyay.beautifulcards.cards.SuggestedCard;
+
 import it.gmariotti.cardslib.library.view.CardView;
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
