@@ -24,6 +24,16 @@ public class MayKnowCard extends Card {
     private String thumbnailUrl;
     private String endButtonText;
 
+    private View.OnClickListener cardOnClickListener;
+
+    public View.OnClickListener getCardOnClickListener() {
+        return cardOnClickListener;
+    }
+
+    public void setCardOnClickListener(View.OnClickListener cardOnClickListener) {
+        this.cardOnClickListener = cardOnClickListener;
+    }
+
     public String getEndButtonText() {
         return endButtonText;
     }
@@ -106,6 +116,7 @@ public class MayKnowCard extends Card {
 
         add.setText(getEndButtonText());
         add.setClickable(true);
+        add.setOnClickListener(getCardOnClickListener());
 
         CardViewWrapper cardView = getCardView();
         CardThumbnailView thumb = cardView.getInternalThumbnailLayout();

@@ -2,6 +2,8 @@ package com.amitupadhyay.beautifulcards;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.amitupadhyay.beautifulcards.cards.MayKnowCard;
 import com.amitupadhyay.beautifulcards.cards.SuggestedCard;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         card.setSubtitleMessage(subtitleMessage);
         card.setThumbnailUrl(thumbnailUrl);
         card.setEndButtonText(endButtonMessage);
+        card.setCardOnClickListener(getOnClickListenerCardOne());
 
         //Set card in the cardView
         CardView cardView = (CardView) this.findViewById(R.id.carddemo_MayKnow);
@@ -83,8 +86,39 @@ public class MainActivity extends AppCompatActivity {
         card2.setSubtitleMessage(subtitleMessageTwo);
         card2.setThumbnailUrl(thumbnailUrlTwo);
         card2.setEndButtonText(endButtonMessageTwo);
+        card2.setCardOnClickListener(getOnClickListenerCardTwo());
 
         CardView mayView2 = (CardView) this.findViewById(R.id.carddemo_MayKnow2);
         mayView2.setCard(card2);
+    }
+
+    /*
+    OnClickEventListener for first card of MayKnowCard
+     */
+    private View.OnClickListener getOnClickListenerCardOne()
+    {
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "First Card", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        return onClickListener;
+    }
+
+    /*
+OnClickEventListener for second card of MayKnowCard
+ */
+    private View.OnClickListener getOnClickListenerCardTwo()
+    {
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Second Card", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        return onClickListener;
     }
 }
