@@ -31,7 +31,18 @@ public class MainActivity extends AppCompatActivity {
         String communityMessage = "View Community";
         String thumbnailUrl = "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg";
 
-        SuggestedCard card = new SuggestedCard(this, titleMessage, subtitleMessageOne, subtitleMessageTwo, communityMessage, thumbnailUrl);
+        SuggestedCard card = new SuggestedCard(this);
+
+        /*
+        setting the different types of message to be displayed on card
+         */
+        card.setTitleMessage(titleMessage);
+        card.setSubtitleMessageOne(subtitleMessageOne);
+        card.setSubTitleMessageTwo(subtitleMessageTwo);
+        card.setCommunityMessage(communityMessage);
+        card.setThumbnailUrl(thumbnailUrl);
+
+        // after setting the message we will instantiate the view and set the card.
         CardViewNative cardView = (CardViewNative) this.findViewById(R.id.carddemo_suggested);
         cardView.setCard(card);
     }

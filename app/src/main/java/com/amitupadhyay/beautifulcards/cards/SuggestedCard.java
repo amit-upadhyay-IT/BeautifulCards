@@ -22,14 +22,48 @@ public class SuggestedCard extends Card {
     private String titleMessage, subtitleMessageOne, subTitleMessageTwo, communityMessage;
     private String thumbnailUrl;
 
-    public SuggestedCard(Context context, String titleMessage, String subtitleMessageOne, String subTitleMessageTwo, String communityMessage, String thumbnailUrl) {
-        this(context, R.layout.carddemo_suggested_inner_content);
+    public String getTitleMessage() {
+        return titleMessage;
+    }
 
+    public void setTitleMessage(String titleMessage) {
         this.titleMessage = titleMessage;
+    }
+
+    public String getSubtitleMessageOne() {
+        return subtitleMessageOne;
+    }
+
+    public void setSubtitleMessageOne(String subtitleMessageOne) {
         this.subtitleMessageOne = subtitleMessageOne;
+    }
+
+    public String getSubTitleMessageTwo() {
+        return subTitleMessageTwo;
+    }
+
+    public void setSubTitleMessageTwo(String subTitleMessageTwo) {
         this.subTitleMessageTwo = subTitleMessageTwo;
+    }
+
+    public String getCommunityMessage() {
+        return communityMessage;
+    }
+
+    public void setCommunityMessage(String communityMessage) {
         this.communityMessage = communityMessage;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public SuggestedCard(Context context) {
+        this(context, R.layout.carddemo_suggested_inner_content);
     }
 
     public SuggestedCard(Context context, int innerLayout) {
@@ -56,7 +90,7 @@ public class SuggestedCard extends Card {
 
         //Add thumbnail
         CardThumbnail thumb = new SuggestedCardThumb(getContext());
-        thumb.setUrlResource(thumbnailUrl);
+        thumb.setUrlResource(getThumbnailUrl());
         thumb.setErrorResource(R.drawable.ic_error_loadingorangesmall);
         addCardThumbnail(thumb);
     }
@@ -72,22 +106,22 @@ public class SuggestedCard extends Card {
 
             if (title != null) {
                 //title.setText(R.string.demo_suggested_title);
-                title.setText(titleMessage);
+                title.setText(getTitleMessage());
             }
 
             if (member != null) {
                 //member.setText(R.string.demo_suggested_member);
-                member.setText(subtitleMessageOne);
+                member.setText(getSubtitleMessageOne());
             }
 
             if (subtitle != null) {
                 //subtitle.setText(R.string.demo_suggested_subtitle);
-                subtitle.setText(subTitleMessageTwo);
+                subtitle.setText(getSubTitleMessageTwo());
             }
 
             if (community != null) {
                 //community.setText(R.string.demo_suggested_community);
-                community.setText(communityMessage);
+                community.setText(getCommunityMessage());
             }
         }
     }

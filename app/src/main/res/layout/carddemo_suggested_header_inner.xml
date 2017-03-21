@@ -34,7 +34,7 @@
         style="@style/carddemo_suggested_header_text"
         android:textSize="18sp"
         android:layout_marginLeft="0dp"
-        android:background="#53A93F"
+        android:background="#2d566b"
         android:paddingLeft="10dp"
         android:gravity="center_vertical"
         android:textColor="#FFF"

@@ -2,7 +2,7 @@
     <string name="app_name">BeautifulCards</string>
 
     <!-- Suggested communities -->
-    <string name="demo_suggested_header">Suggested communities</string>
+    <string name="demo_suggested_header">Minimum Stack</string>
     <string name="demo_suggested_title">Android &#8482;</string>
     <string name="demo_suggested_member">199990 members</string>
     <string name="demo_suggested_subtitle">Brought to you by Android Central......</string>
