@@ -52,19 +52,39 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initCardMayKnow() {
 
+        String titleMessage = "Amit Upadhyay";
+        String subtitleMessage = "App Developer";
+        String thumbnailUrl = "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg";
+        String endButtonMessage = "FB";
+
         //Create a Card
-        MayKnowCard card= new MayKnowCard(this, "Amit Upadhyay", "App developer", "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg");
+        MayKnowCard card= new MayKnowCard(this);
         card.setShadow(false);
+
+        card.setTitleMessage(titleMessage);
+        card.setSubtitleMessage(subtitleMessage);
+        card.setThumbnailUrl(thumbnailUrl);
+        card.setEndButtonText(endButtonMessage);
 
         //Set card in the cardView
         CardView cardView = (CardView) this.findViewById(R.id.carddemo_MayKnow);
         cardView.setCard(card);
 
-        MayKnowCard card2 = new MayKnowCard(this, "Amit", "CEO", "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg");
+        String titleMessageTwo = "Amit Kr. Upadhyay";
+        String subtitleMessageTwo = "CEO";
+        String thumbnailUrlTwo = "https://lh5.googleusercontent.com/-N8bz9q4Kz0I/AAAAAAAAAAI/AAAAAAAAAAs/Icl2bQMyK7c/s265-c-k-no/photo.jpg";
+        String endButtonMessageTwo = "MORE";
+
+        MayKnowCard card2 = new MayKnowCard(this);
         card2.addCardHeader(null);
         card2.setShadow(true);
+
+        card2.setTitleMessage(titleMessageTwo);
+        card2.setSubtitleMessage(subtitleMessageTwo);
+        card2.setThumbnailUrl(thumbnailUrlTwo);
+        card2.setEndButtonText(endButtonMessageTwo);
+
         CardView mayView2 = (CardView) this.findViewById(R.id.carddemo_MayKnow2);
         mayView2.setCard(card2);
-
     }
 }

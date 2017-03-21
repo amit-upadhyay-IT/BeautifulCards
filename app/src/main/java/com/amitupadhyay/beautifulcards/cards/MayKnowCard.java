@@ -22,12 +22,42 @@ public class MayKnowCard extends Card {
     private String titleMessage;
     private String subtitleMessage;
     private String thumbnailUrl;
+    private String endButtonText;
 
-    public MayKnowCard(Context context, String titleMessage, String subtitleMessage, String thumbnailUrl) {
-        this(context, R.layout.carddemo_mayknow_inner_content);
+    public String getEndButtonText() {
+        return endButtonText;
+    }
+
+    public void setEndButtonText(String endButtonText) {
+        this.endButtonText = endButtonText;
+    }
+
+    public String getTitleMessage() {
+        return titleMessage;
+    }
+
+    public void setTitleMessage(String titleMessage) {
         this.titleMessage = titleMessage;
+    }
+
+    public String getSubtitleMessage() {
+        return subtitleMessage;
+    }
+
+    public void setSubtitleMessage(String subtitleMessage) {
         this.subtitleMessage = subtitleMessage;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public MayKnowCard(Context context) {
+        this(context, R.layout.carddemo_mayknow_inner_content);
     }
 
     public MayKnowCard(Context context, int innerLayout) {
@@ -47,7 +77,7 @@ public class MayKnowCard extends Card {
 
         //Add Thumbnail
         CardThumbnail thumbnail = new CardThumbnail(getContext());
-        thumbnail.setUrlResource(thumbnailUrl);
+        thumbnail.setUrlResource(getThumbnailUrl());
         thumbnail.setErrorResource(R.drawable.ic_error_loadingsmall);
         addCardThumbnail(thumbnail);
 
@@ -71,8 +101,10 @@ public class MayKnowCard extends Card {
         //title.setText(getContext().getString(R.string.may_know_card_inner_title));
         //subtitle.setText(getContext().getString(R.string.may_know_card_inner_subtitle));
 
-        title.setText(titleMessage);
-        subtitle.setText(subtitleMessage);
+        title.setText(getTitleMessage());
+        subtitle.setText(getSubtitleMessage());
+
+        add.setText(getEndButtonText());
         add.setClickable(true);
 
         CardViewWrapper cardView = getCardView();
