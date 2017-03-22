@@ -6,4 +6,7 @@
 
     <color name="white">#FEFEFE</color>
     <color name="white_off">#BDBDBD</color>
+
+    <color name="body_text_1_inverse">#deffffff</color>
+    <color name="body_text_2_inverse">#8affffff</color>
 </resources>

@@ -1,12 +1,14 @@
 package com.amitupadhyay.beautifulcards.cards;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitupadhyay.beautifulcards.HashcardActivity;
 import com.amitupadhyay.beautifulcards.R;
 
 import it.gmariotti.cardslib.library.internal.Card;
@@ -82,6 +84,7 @@ public class SuggestedCard extends Card {
             @Override
             public void onClick(Card card, View view) {
                 Toast.makeText(getContext(), "Click listener", Toast.LENGTH_LONG).show();
+                getContext().startActivity(new Intent(getContext(), HashcardActivity.class));
             }
         });
 
