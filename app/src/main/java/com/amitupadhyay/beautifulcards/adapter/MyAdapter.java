@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder> {
         final DataSet dataSet = dataSetList.get(position);
 
         holder.centerMessageTV.setText(dataSet.getTitleMessage());
-        holder.centerMessageTV.setBackgroundColor(context.getResources().getColor(dataSet.getBgColor()));
+        //holder.centerMessageTV.setBackgroundColor(context.getResources().getColor(dataSet.getBgColor()));
         holder.description.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder> {
             }
         });
 
+        holder.myView.setBackgroundColor(context.getResources().getColor(dataSet.getBgColor()));
     }
 
     @Override
@@ -65,12 +66,14 @@ public class MyAdapter extends RecyclerView.Adapter <MyAdapter.ViewHolder> {
 
         TextView centerMessageTV;
         ImageButton description;
+        View myView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             centerMessageTV = (TextView) itemView.findViewById(R.id.name);
             description = (ImageButton) itemView.findViewById(R.id.description);
+            myView = itemView;
         }
     }
 }
